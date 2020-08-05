@@ -5,7 +5,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 
 //GET Route
 router.get('/', rejectUnauthenticated, (req, res) => {
-    console.log('in router.get!!')
+    console.log('in router.get')
     const queryString = `SELECT * FROM "event_info" ORDER BY "due_date" ASC`;
     pool.query(queryString)
     .then((result)=>{res.send(result.rows)})
@@ -21,7 +21,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     let reqId= req.params.id
     const queryText = 'DELETE FROM "event_info" WHERE id=$1';
-    console.log('Delete request for id', reqId);
+    console.log('In router.delete id=', reqId);
     pool.query(queryText, [reqId])
       .then(() => { res.sendStatus(200); })
       .catch((err) => {
