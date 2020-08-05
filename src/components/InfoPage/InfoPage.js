@@ -1,4 +1,5 @@
 import React from 'react';
+import DocketList from "../DocketList/DocketList";
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -7,7 +8,8 @@ import React from 'react';
 
 const InfoPage = () => (
   <div>
-    <p>Info Page</p>
+    <DocketList/>
+    <button>Add Event</button>
   </div>
 );
 

@@ -5,9 +5,6 @@ import LogOutButton from "../LogOutButton/LogOutButton";
 
 class UserPage extends Component {
 
-  componentDidMount () {
-    this.props.dispatch({type: 'FETCH_DOCKET'})
-  }
 
   // this component doesn't do much to start, just renders some user info to the DOM
   render() {
@@ -15,9 +12,6 @@ class UserPage extends Component {
       <div>
         <h3 id="welcome">Welcome, {this.props.user.username}!</h3>
         <p>Your ID is: {this.props.user.id}</p>
-        {JSON.stringify(this.props.docket)}
-
-
         <LogOutButton className="log-in" />
       </div>
     );
