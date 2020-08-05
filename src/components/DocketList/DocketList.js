@@ -18,12 +18,15 @@ componentDidMount () {
                     <th>Event</th>
                     <th>Case</th>
                     <th>Date</th>
+                    <th>Notes</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 {/* {JSON.stringify(this.props.docket)} */}
                 {this.props.docket.map((item, index) => (
-                    <DocketItem item={item}/>
+                    <DocketItem key={index} item={item}/>
                 )) }
             </tbody>
            </table>
