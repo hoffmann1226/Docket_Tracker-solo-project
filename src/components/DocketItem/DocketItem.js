@@ -16,7 +16,7 @@ this.props.dispatch({type: 'DELETE_EVENT', payload: id});
         <td>{this.props.item.event}</td>
         <td>{this.props.item.case}</td>
         <td>{this.props.item.due_date}</td>
-        <td><button>Notes</button></td>
+        <td><button>Details</button></td>
         <td><button>Edit</button></td>
         <td><button onClick = {this.handleDelete(this.props.item.id)}>Delete</button></td>
       </tr>

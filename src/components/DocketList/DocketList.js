@@ -18,7 +18,7 @@ componentDidMount () {
                     <th>Event</th>
                     <th>Case</th>
                     <th>Date</th>
-                    <th>Notes</th>
+                    <th>Details</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
