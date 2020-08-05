@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 class DocketItem extends Component {
 
 handleDelete = (id)=>(event)=>{
-console.log('delete clicked, id?', id);
+console.log('delete clicked, id is', id);
 this.props.dispatch({type: 'DELETE_EVENT', payload: id});
 }//end handleDelete
 
