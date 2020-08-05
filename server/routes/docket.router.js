@@ -14,7 +14,15 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 //POST Route
 router.post('/', rejectUnauthenticated, (req, res) => {
-
+  console.log( "in post route:", req.body );
+  const query = `INSERT INTO "event_info" ( "case", "event", "due_date", "details", "user_id" ) VALUES ( $1, $2, $3, $4, $5 )`;
+  const values = [ req.body.case, req.body.event, req.body.due_date, req.body.details, req.body.user_id  ];
+  pool.query( query, values ).then( ( results )=>{
+      res.sendStatus( 201 );
+  }).catch( ( err )=>{
+      console.log( 'ERROR with INSERT:', err );
+      res.sendStatus( 500 );
+  })
 });
 
 //DELETE Route

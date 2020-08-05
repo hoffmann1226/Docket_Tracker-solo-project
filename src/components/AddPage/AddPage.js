@@ -15,10 +15,6 @@ state = {
 
 goBack =() => this.props.history.push('/info');
 
-handleSave =() => {
-    this.props.history.push('/info');
-}
-
 handleChange = (event, input) => {
     this.setState({
             ...this.state,
@@ -31,7 +27,7 @@ handleSave = () => {
     if (this.state.event === '' || this.state.case === '' || this.state.due_date === '' || this.state.details === '') {
         alert('Enter title and description to save')
     } else {
-        this.props.dispatch({ type: 'ADD_CASE', payload: this.state })
+        this.props.dispatch({ type: 'ADD_EVENT', payload: this.state })
         this.goBack();
     }
   }
