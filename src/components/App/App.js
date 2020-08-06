@@ -17,6 +17,7 @@ import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import AddPage from '../AddPage/AddPage';
+import EditPage from '../EditPage/EditPage';
 
 import './App.css';
 
@@ -60,6 +61,11 @@ class App extends Component {
               exact
               path="/add"
               component={AddPage}
+            />
+             <ProtectedRoute
+              exact
+              path='/edit/:id'
+              component={EditPage}
             />
             <Route render={() => <h1>404</h1>} />
           </Switch>

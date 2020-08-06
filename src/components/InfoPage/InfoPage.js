@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DocketList from "../DocketList/DocketList";
+import { connect } from 'react-redux';
 
 class InfoPage extends Component {
 
@@ -30,4 +31,9 @@ class InfoPage extends React.Component {
   }
 }
 */
-export default InfoPage;
+const mapStateToProps = (state) => ({
+  state
+});
+
+
+export default connect(mapStateToProps)(InfoPage);

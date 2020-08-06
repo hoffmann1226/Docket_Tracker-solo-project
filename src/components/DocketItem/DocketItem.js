@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
+
 
 
 
@@ -10,6 +12,10 @@ console.log('delete clicked, id is', id);
 this.props.dispatch({type: 'DELETE_EVENT', payload: id});
 }//end handleDelete
 
+goEdit = (id) => (event)=> {
+  console.log('edit clicked, id is', id) 
+  this.props.history.push('/edit/' + id) 
+}
   render() {
     return (
       <tr key={this.props.item.id}>
@@ -17,7 +23,7 @@ this.props.dispatch({type: 'DELETE_EVENT', payload: id});
         <td>{this.props.item.case}</td>
         <td>{this.props.item.due_date}</td>
         <td><button>Details</button></td>
-        <td><button>Edit</button></td>
+        <td><button onClick = {this.goEdit(this.props.item.id)} >Edit</button></td>
         <td><button onClick = {this.handleDelete(this.props.item.id)}>Delete</button></td>
       </tr>
     );
@@ -26,8 +32,8 @@ this.props.dispatch({type: 'DELETE_EVENT', payload: id});
 
 
 const mapStateToProps = (state) => ({
-  docket: state.docket
+  state
 });
 
 
-export default connect(mapStateToProps)(DocketItem);
+export default withRouter(connect(mapStateToProps)(DocketItem));
