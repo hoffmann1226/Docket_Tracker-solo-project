@@ -38,4 +38,15 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
       });
   });
 
+  //PUT Route
+  router.put('/', rejectUnauthenticated, (req, res) => {
+    let queryText = `UPDATE "event_info" SET "case" = $1, "event" = $2, "due_date" = $3, "details" = $4 WHERE "id" = $5;`;
+    pool.query(queryText, [req.body.case, req.body.event, req.body.due_date, req.body.details, req.body.id])
+        .then(response => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            res.sendStatus(500);
+        })
+  })
+
 module.exports = router;

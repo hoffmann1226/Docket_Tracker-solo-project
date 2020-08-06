@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 
 
 class AddPage extends Component {
@@ -25,7 +26,7 @@ handleChange = (event, input) => {
 
 handleSave = () => {
     if (this.state.event === '' || this.state.case === '' || this.state.due_date === '' || this.state.details === '') {
-        alert('Enter title and description to save')
+        alert('Enter event, case, date, and details to add')
     } else {
         this.props.dispatch({ type: 'ADD_EVENT', payload: this.state })
         this.goBack();
@@ -45,7 +46,7 @@ handleSave = () => {
             <input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></input>  
           </div>
           <div>
-            <input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></input>
+          <textarea onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></textarea>
           </div>
            <button onClick={this.goBack}>Back</button>
            <button onClick={this.handleSave}>Confirm Add</button>
@@ -61,4 +62,4 @@ const mapStateToProps = (state) => ({
 });
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(AddPage);
+export default withRouter(connect(mapStateToProps)(AddPage));
