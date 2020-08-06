@@ -19,6 +19,7 @@ INSERT INTO "event_info" ("case", "event", "due_date", "details", "user_id")
 VALUES ('Hoffmann v. Prime', 'Hearing for Motion to Dismiss', '2020-08-20', 'Difficult judge', 1),
 ('Johnson v. Prime', 'Oral Argument', '2020-08-22', 'In courtroom 101B', 1),
 ('Joachim v. Prime', 'Discovery Responses Due', '2020-08-22', 'Follow up with client on interrogatory 3', 1),
-('Stiff v. Prime', 'Motions in Limine Due', '2020-08-25', 'Consult with client', 1);
+('Stiff v. Prime', 'Motions in Limine Due', '2020-08-25', 'Consult with client', 1),
+('Simonelli v. Prime', 'Motions in Limine Due', '2020-08-25', 'Consult with client', 2);
 
 SELECT * FROM "event_info";
