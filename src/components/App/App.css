@@ -1,12 +1,16 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
+    background-color: azure;
 }
 
 .alert {
     background-color: #ff4545;
     margin: 50px;
 }
+
+
+  
 
 form {
     background-color: #dbd5d5;
