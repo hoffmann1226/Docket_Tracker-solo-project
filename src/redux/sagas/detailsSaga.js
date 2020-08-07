@@ -7,7 +7,7 @@ function* getDetails( action ){
     console.log('in getDetails!')
     try{
         yield axios.get('/api/docket/' + action.payload);
-        yield put({type: 'FETCH_DOCKET'});
+        yield put({type: 'SET_DOCKET'});
     }catch (error){
       console.log('error with docket delete request', error);
     }
