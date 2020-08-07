@@ -18,8 +18,9 @@ goEdit = (id) => (event)=> {
 }
 
 goDetails = (id) => (event)=> {
-  console.log('details clicked, id is', id) 
-  this.props.history.push('/details/' + id) 
+  console.log('details clicked, id is', id)
+  this.props.dispatch({type: 'GET_DETAILS', payload: id}) 
+  this.props.history.push('/details/') 
 }
   render() {
     return (

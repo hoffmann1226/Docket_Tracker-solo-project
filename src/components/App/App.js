@@ -70,7 +70,7 @@ class App extends Component {
             />
              <ProtectedRoute
               exact
-              path='/details/:id'
+              path='/details/'
               component={DetailsPage}
             />
             <Route render={() => <h1>404</h1>} />
