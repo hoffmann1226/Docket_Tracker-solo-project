@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from "../LogOutButton/LogOutButton";
+import DocketList from "../DocketList/DocketList";
 
 
 class UserPage extends Component {
 
 
-  // this component doesn't do much to start, just renders some user info to the DOM
+  addEvent =() => this.props.history.push('/add')
+
   render() {
     return (
-      <div>
-        <h3 id="welcome">Welcome, {this.props.user.username}!</h3>
-        <p>Your ID is: {this.props.user.id}</p>
-        <LogOutButton className="log-in" />
-      </div>
-    );
+    <div>
+      <DocketList/>
+      <button onClick={this.addEvent}>Add Event</button>
+    </div>
+      );
   }
-}
+  }
 
 // Instead of taking everything from state, we just want the user info.
 const mapStateToProps = (state) => ({
