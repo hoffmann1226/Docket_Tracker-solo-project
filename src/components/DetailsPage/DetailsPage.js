@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 
 class DetailsPage extends Component {
 
-goBack =() => this.props.history.push('/info');
+goBack =() => this.props.history.push('/home');
 
   render() {
     return (
