@@ -14,7 +14,7 @@ state = {
 
 }
 
-goBack =() => this.props.history.push('/info');
+goBack =() => this.props.history.push('/home');
 
 handleChange = (event, input) => {
     this.setState({

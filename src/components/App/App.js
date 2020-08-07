@@ -18,7 +18,6 @@ import UserPage from '../UserPage/UserPage';
 import AddPage from '../AddPage/AddPage';
 import EditPage from '../EditPage/EditPage';
 import DetailsPage from '../DetailsPage/DetailsPage';
-
 import './App.css';
 
 class App extends Component {
