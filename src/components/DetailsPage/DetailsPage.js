@@ -18,7 +18,7 @@ goBack =() => this.props.history.push('/info');
 }
 
 const mapStateToProps = (state) => ({
-    state
+    details: state.details
 });
 
 export default withRouter(connect(mapStateToProps)(DetailsPage));

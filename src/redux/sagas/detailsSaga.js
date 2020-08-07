@@ -6,10 +6,11 @@ import { takeEvery, put} from 'redux-saga/effects';
 function* getDetails( action ){
     console.log('in getDetails!')
     try{
-        yield axios.get('/api/docket/' + action.payload);
-        yield put({type: 'SET_DOCKET'});
+        const response = yield axios.get('/api/docket/' + action.payload);
+        console.log('got from server', response.data)
+        yield put({type: 'SET_DETAILS', payload: response.data});
     }catch (error){
-      console.log('error with docket delete request', error);
+      console.log('error with details get request', error);
     }
   }
 
