@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import './DetailsPage.css';
 
 
 class DetailsPage extends Component {
@@ -11,7 +12,7 @@ goBack =() => this.props.history.push('/home');
     return (
         <div >
         {this.props.details.map(event =>
-            <div key={event.id}>
+            <div className="center" key={event.id}>
                 <h3> Event: {event.event}</h3>
                 <h3> Case: {event.case}</h3>
                 <h3>Details: {event.details}</h3>

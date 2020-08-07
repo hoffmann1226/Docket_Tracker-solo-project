@@ -29,7 +29,7 @@ handleSave = () => {
         alert('Enter event, case, date, and details to save')
     } else {
         this.props.dispatch({ type: 'UPDATE_EVENT', payload: this.state })
-        // this.goBack();
+        this.goBack();
     }
   }
 
@@ -48,7 +48,7 @@ handleSave = () => {
           <div>
             <textarea onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></textarea>
           </div>
-           <button onClick={this.goBack}>Return to Info Page</button>
+           <button onClick={this.goBack}>Cancel</button>
            <button onClick={this.handleSave}>Save changes</button>
       </div>
     );
