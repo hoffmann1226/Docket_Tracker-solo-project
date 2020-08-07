@@ -9,7 +9,7 @@ const AboutPage = () => (
   <div>
     <div>
       <p>
-        This about page is for anyone to read!
+        Docket Tracker is a legal tech app for attorneys to organize their busy schedule.  From the home page, attorney-users are able to see their case load, view details, edit, add, and delete information.
       </p>
     </div>
   </div>
