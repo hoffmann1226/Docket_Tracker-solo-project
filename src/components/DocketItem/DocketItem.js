@@ -16,13 +16,18 @@ goEdit = (id) => (event)=> {
   console.log('edit clicked, id is', id) 
   this.props.history.push('/edit/' + id) 
 }
+
+goDetails = (id) => (event)=> {
+  console.log('details clicked, id is', id) 
+  this.props.history.push('/details/' + id) 
+}
   render() {
     return (
       <tr key={this.props.item.id}>
         <td>{this.props.item.event}</td>
         <td>{this.props.item.case}</td>
         <td>{this.props.item.due_date}</td>
-        <td><button>Details</button></td>
+        <td><button onClick = {this.goDetails(this.props.item.id)}>Details</button></td>
         <td><button onClick = {this.goEdit(this.props.item.id)} >Edit</button></td>
         <td><button onClick = {this.handleDelete(this.props.item.id)}>Delete</button></td>
       </tr>
