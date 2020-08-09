@@ -23,9 +23,9 @@ componentDidMount () {
                     <TableCell>Event</TableCell>
                     <TableCell>Case</TableCell>
                     <TableCell>Date</TableCell>
-                    <TableCell>Details</TableCell>
-                    <TableCell>Edit</TableCell>
-                    <TableCell>Delete</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
+                    <TableCell></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody>
