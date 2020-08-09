@@ -13,7 +13,7 @@ class UserPage extends Component {
     return (
     <div>
       <DocketList/>
-      <Button color="primary" variant="contained" onClick={this.addEvent}>Add Event</Button>
+      <Button color="default" variant="contained" onClick={this.addEvent}>Add Event</Button>
     </div>
       );
   }

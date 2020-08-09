@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -28,9 +29,9 @@ goDetails = (id) => (event)=> {
         <td>{this.props.item.event}</td>
         <td>{this.props.item.case}</td>
         <td>{this.props.item.due_date}</td>
-        <td><button onClick = {this.goDetails(this.props.item.id)}>Details</button></td>
-        <td><button onClick = {this.goEdit(this.props.item.id)} >Edit</button></td>
-        <td><button onClick = {this.handleDelete(this.props.item.id)}>Delete</button></td>
+        <td><Button color="default" variant="contained" onClick = {this.goDetails(this.props.item.id)}>Details</Button></td>
+        <td><Button color="primary" variant="contained" onClick = {this.goEdit(this.props.item.id)} >Edit</Button></td>
+        <td><Button color="secondary" variant="contained" onClick = {this.handleDelete(this.props.item.id)}>Delete</Button></td>
       </tr>
     );
   }
