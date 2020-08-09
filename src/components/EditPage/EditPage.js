@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 
 
 class EditPage extends Component {
@@ -38,16 +39,16 @@ handleSave = () => {
     return (
       <div> Enter information to edit an event to the docket
                     <div>
-            <input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></input>  
+            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
           </div>
           <div>
-            <input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></input>  
+            <Input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></Input>  
           </div>
           <div>
-            <input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></input>  
+            <Input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></Input>  
           </div>
           <div>
-            <textarea onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></textarea>
+            <Input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></Input>
           </div>
           <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel</Button>
           <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes</Button>
