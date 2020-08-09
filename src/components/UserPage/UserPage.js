@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocketList from "../DocketList/DocketList";
+import Button from '@material-ui/core/Button';
 
 
 class UserPage extends Component {
@@ -12,7 +13,7 @@ class UserPage extends Component {
     return (
     <div>
       <DocketList/>
-      <button onClick={this.addEvent}>Add Event</button>
+      <Button color="primary" variant="contained" onClick={this.addEvent}>Add Event</Button>
     </div>
       );
   }
