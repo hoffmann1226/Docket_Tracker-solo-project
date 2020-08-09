@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocketItem from '../DocketItem/DocketItem';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
 
 
 class DocketList extends Component {
@@ -12,24 +17,24 @@ componentDidMount () {
   render() {
     return (
       <div>
-          <table>
-            <thead>
-                <tr>
-                    <th>Event</th>
-                    <th>Case</th>
-                    <th>Date</th>
-                    <th>Details</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody>
+          <Table>
+            <TableHead>
+                <TableRow>
+                    <TableCell>Event</TableCell>
+                    <TableCell>Case</TableCell>
+                    <TableCell>Date</TableCell>
+                    <TableCell>Details</TableCell>
+                    <TableCell>Edit</TableCell>
+                    <TableCell>Delete</TableCell>
+                </TableRow>
+            </TableHead>
+            <TableBody>
                 {/* {JSON.stringify(this.props.docket)} */}
                 {this.props.docket.map((item, index) => (
                     <DocketItem key={index} item={item}/>
                 )) }
-            </tbody>
-           </table>
+            </TableBody>
+           </Table>
       </div>
     );
   }

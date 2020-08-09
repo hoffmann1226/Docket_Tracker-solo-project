@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 class EditPage extends Component {
@@ -48,8 +49,8 @@ handleSave = () => {
           <div>
             <textarea onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></textarea>
           </div>
-           <button onClick={this.goBack}>Cancel</button>
-           <button onClick={this.handleSave}>Save changes</button>
+          <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel</Button>
+          <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes</Button>
       </div>
     );
   }

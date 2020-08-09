@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
 
 
 
@@ -25,14 +27,14 @@ goDetails = (id) => (event)=> {
 }
   render() {
     return (
-      <tr key={this.props.item.id}>
-        <td>{this.props.item.event}</td>
-        <td>{this.props.item.case}</td>
-        <td>{this.props.item.due_date}</td>
-        <td><Button color="default" variant="contained" onClick = {this.goDetails(this.props.item.id)}>Details</Button></td>
-        <td><Button color="primary" variant="contained" onClick = {this.goEdit(this.props.item.id)} >Edit</Button></td>
-        <td><Button color="secondary" variant="contained" onClick = {this.handleDelete(this.props.item.id)}>Delete</Button></td>
-      </tr>
+      <TableRow key={this.props.item.id}>
+        <TableCell>{this.props.item.event}</TableCell>
+        <TableCell>{this.props.item.case}</TableCell>
+        <TableCell>{this.props.item.due_date}</TableCell>
+        <TableCell><Button color="default" variant="contained" onClick = {this.goDetails(this.props.item.id)}>Details</Button></TableCell>
+        <TableCell><Button color="primary" variant="contained" onClick = {this.goEdit(this.props.item.id)} >Edit</Button></TableCell>
+        <TableCell><Button color="secondary" variant="contained" onClick = {this.handleDelete(this.props.item.id)}>Delete</Button></TableCell>
+      </TableRow>
     );
   }
 }
