@@ -4,6 +4,9 @@ import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 
 
@@ -31,9 +34,9 @@ goDetails = (id) => (event)=> {
         <TableCell>{this.props.item.event}</TableCell>
         <TableCell>{this.props.item.case}</TableCell>
         <TableCell>{this.props.item.due_date}</TableCell>
-        <TableCell><Button color="default" variant="contained" onClick = {this.goDetails(this.props.item.id)}>Details</Button></TableCell>
-        <TableCell><Button color="primary" variant="contained" onClick = {this.goEdit(this.props.item.id)} >Edit</Button></TableCell>
-        <TableCell><Button color="secondary" variant="contained" onClick = {this.handleDelete(this.props.item.id)}>Delete</Button></TableCell>
+        <TableCell><Button color="default" variant="contained" onClick = {this.goDetails(this.props.item.id)}>Details <MoreHorizIcon/></Button></TableCell>
+        <TableCell><Button color="primary" variant="contained" onClick = {this.goEdit(this.props.item.id)} >Edit <EditIcon/></Button></TableCell>
+        <TableCell><Button color="secondary" variant="contained" onClick = {this.handleDelete(this.props.item.id)}>Delete <DeleteIcon/></Button></TableCell>
       </TableRow>
     );
   }

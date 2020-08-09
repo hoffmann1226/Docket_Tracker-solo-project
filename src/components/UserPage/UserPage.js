@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DocketList from "../DocketList/DocketList";
 import Button from '@material-ui/core/Button';
+import AddIcon from '@material-ui/icons/Add';
 
 
 
@@ -14,7 +15,7 @@ class UserPage extends Component {
     return (
     <div>
       <DocketList/>
-      <Button color="default" variant="contained" onClick={this.addEvent}>Add Event</Button>
+      <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
     </div>
       );
   }

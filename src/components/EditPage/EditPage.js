@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
+import CancelIcon from '@material-ui/icons/Cancel';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 
 class EditPage extends Component {
@@ -50,8 +52,8 @@ handleSave = () => {
           <div>
             <Input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></Input>
           </div>
-          <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel</Button>
-          <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes</Button>
+          <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel <CancelIcon/></Button>
+          <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes <SaveAltIcon/></Button>
       </div>
     );
   }
