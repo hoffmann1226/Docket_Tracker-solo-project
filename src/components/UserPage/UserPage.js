@@ -4,6 +4,7 @@ import DocketList from "../DocketList/DocketList";
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import Input from '@material-ui/core/Input';
+import SearchItem from '../SearchItem/SearchItem'
 
 
 
@@ -37,6 +38,11 @@ class UserPage extends Component {
         <p>Search by case name <Input onChange= {this.handleChange} placeholder="case name"></Input></p>
         <Button color="default" variant="contained" onClick={this.searchCase}>Search</Button>
       </div>
+      <div>
+      {this.props.search.map((item, index) => (
+                    <SearchItem key={index} item={item}/>
+          )) }  
+      </div>
     </div>
       );
   }
@@ -44,8 +50,7 @@ class UserPage extends Component {
 
 // Instead of taking everything from state, we just want the user info.
 const mapStateToProps = (state) => ({
-  user: state.user,
-  docket: state.docket
+  search: state.search
 });
 
 // this allows us to use <App /> in index.js
