@@ -6,6 +6,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Input from '@material-ui/core/Input';
 
 
+
 class UserPage extends Component {
 
   state = {
@@ -15,14 +16,14 @@ class UserPage extends Component {
   addEvent =() => this.props.history.push('/add')
 
   searchCase =() => {
-    this.props.dispatch({ type: 'SEARCH_CASE', payload: this.state })
+    this.props.dispatch({ type: 'SEARCH_CASE', payload: this.state.case })
   }
   
   handleChange = (event) => {
     this.setState({
             case: event.target.value
     })
-    console.log(this.state)
+    console.log(this.state.case)
   }
 
 

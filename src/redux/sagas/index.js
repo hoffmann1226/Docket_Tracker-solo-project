@@ -7,6 +7,7 @@ import deleteSaga from './deleteSaga'
 import postSaga from './postSaga'
 import updateSaga from './updateSaga/updateSaga'
 import detailsSaga from './detailsSaga'
+import searchSaga from './searchSaga'
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -25,5 +26,6 @@ export default function* rootSaga() {
     postSaga(),
     updateSaga(),
     detailsSaga(),
+    searchSaga(),
   ]);
 }
