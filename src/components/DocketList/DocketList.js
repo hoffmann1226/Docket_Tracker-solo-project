@@ -20,9 +20,9 @@ componentDidMount () {
           <Table>
             <TableHead>
                 <TableRow>
-                    <TableCell>Event</TableCell>
-                    <TableCell>Case</TableCell>
                     <TableCell>Date</TableCell>
+                    <TableCell>Case</TableCell>
+                    <TableCell>Event</TableCell>
                     <TableCell></TableCell>
                     <TableCell></TableCell>
                     <TableCell></TableCell>

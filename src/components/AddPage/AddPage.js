@@ -39,13 +39,13 @@ handleSave = () => {
     return (
       <div> Enter information to add an event to the docket
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></Input>  
           </div>
           <div>
             <Input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
           </div>
           <div>
           <Input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></Input>

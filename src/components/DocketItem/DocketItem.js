@@ -32,9 +32,9 @@ goDetails = (id) => (event)=> {
   render() {
     return (
       <TableRow key={this.props.item.id}>
-        <TableCell><GavelIcon/>{this.props.item.event}</TableCell>
+        <TableCell><GavelIcon/>{this.props.item.due_date.split('T')[0]}</TableCell>
         <TableCell>{this.props.item.case}</TableCell>
-        <TableCell>{this.props.item.due_date.split('T')[0]}</TableCell>
+        <TableCell>{this.props.item.event}</TableCell>
         <TableCell><Button color="default" variant="contained" onClick = {this.goDetails(this.props.item.id)}>Details <MoreHorizIcon/></Button></TableCell>
         <TableCell><Button color="primary" variant="contained" onClick = {this.goEdit(this.props.item.id)} >Edit <EditIcon/></Button></TableCell>
         <TableCell><Button color="secondary" variant="contained" onClick = {this.handleDelete(this.props.item.id)}>Delete <DeleteIcon/></Button></TableCell>
