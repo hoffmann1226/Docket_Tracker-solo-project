@@ -7,6 +7,7 @@ import Input from '@material-ui/core/Input';
 import SearchItem from '../SearchItem/SearchItem'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
+import FaSearch from '@material-ui/icons/Search';
 
 
 
@@ -38,7 +39,7 @@ class UserPage extends Component {
       <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
       <div>
         <p>Search docket by case: <Input onChange= {this.handleChange} placeholder="case name"></Input></p>
-        <Button color="default" variant="contained" onClick={this.searchCase}>Search</Button>
+        <Button color="default" variant="contained" onClick={this.searchCase}>Search <FaSearch/></Button>
       </div>
       <div>
         <Table>
