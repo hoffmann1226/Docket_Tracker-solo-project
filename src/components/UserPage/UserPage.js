@@ -38,8 +38,7 @@ class UserPage extends Component {
       <DocketList/>
       <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
       <div>
-        <p>Search docket by case: <Input onChange= {this.handleChange} placeholder="case name"></Input></p>
-        <Button color="default" variant="contained" onClick={this.searchCase}>Search <FaSearch/></Button>
+        <p>Search docket by case: <Input onChange= {this.handleChange} placeholder="case name"></Input><Button color="default" variant="contained" onClick={this.searchCase}>Search <FaSearch/></Button></p>
       </div>
       <div>
         <Table>

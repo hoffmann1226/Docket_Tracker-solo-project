@@ -7,16 +7,22 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 
+
+
 class EditPage extends Component {
 
+  
     state = {
-        event: '',
-        case: '',
-        due_date: '',
-        details: '',
-        id: this.props.match.params.id
-    
+        event: this.props.details.event,
+        case: this.props.details.case,
+        due_date: this.props.details.due_date,
+        details: this.props.details.details,
+        id: this.props.match.params.id 
     }
+
+componentDidMount () {
+  this.props.dispatch({type: 'GET_DETAILS', payload: this.props.match.params.id}) 
+}
 
 goBack =() => this.props.history.push('/home');
 
@@ -40,17 +46,17 @@ handleSave = () => {
   render() {
     return (
       <div> Enter information to edit an event to the docket
-                    <div>
-            <Input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></Input>  
+          <div>
+            <Input onChange={(event) => this.handleChange(event, 'due_date')} value={this.state.due_date}></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'case')} value={this.state.case}></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'event')} value={this.state.event}></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></Input>
+            <Input onChange={(event) => this.handleChange(event, 'details')}value={this.state.details}></Input>
           </div>
           <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel <CancelIcon/></Button>
           <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes <SaveAltIcon/></Button>
@@ -61,7 +67,7 @@ handleSave = () => {
 
 // Instead of taking everything from state, we just want the user info.
 const mapStateToProps = (state) => ({
-    docket: state.docket
+    details: state.details
 });
 
 // this allows us to use <App /> in index.js
