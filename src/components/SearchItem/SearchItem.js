@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
-
 
 
 
@@ -16,7 +11,11 @@ class SearchItem extends Component {
 
   render() {
     return (
-        <p>{this.props.item.case}, {this.props.item.event_info}, {this.props.item.due_date.split('T')[0]}, {this.props.item.details}</p>
+        <TableRow>
+            <TableCell>{this.props.item.case}</TableCell>
+            <TableCell>{this.props.item.event}</TableCell>
+            <TableCell>{this.props.item.due_date.split('T')[0]}</TableCell>
+        </TableRow>      
     );
   }
 }

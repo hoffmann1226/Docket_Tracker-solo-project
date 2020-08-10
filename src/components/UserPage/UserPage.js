@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import Input from '@material-ui/core/Input';
 import SearchItem from '../SearchItem/SearchItem'
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
 
 
 
@@ -35,13 +37,17 @@ class UserPage extends Component {
       <DocketList/>
       <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
       <div>
-        <p>Search by case name <Input onChange= {this.handleChange} placeholder="case name"></Input></p>
+        <p>Search docket by case: <Input onChange= {this.handleChange} placeholder="case name"></Input></p>
         <Button color="default" variant="contained" onClick={this.searchCase}>Search</Button>
       </div>
       <div>
-      {this.props.search.map((item, index) => (
+        <Table>
+          <TableBody>
+            {this.props.search.map((item, index) => (
                     <SearchItem key={index} item={item}/>
-          )) }  
+            )) }  
+          </TableBody>
+        </Table>
       </div>
     </div>
       );
