@@ -15,6 +15,7 @@ class SearchItem extends Component {
             <TableCell>{this.props.item.case}</TableCell>
             <TableCell>{this.props.item.event}</TableCell>
             <TableCell>{this.props.item.due_date.split('T')[0]}</TableCell>
+            <TableCell>{this.props.item.details}</TableCell>
         </TableRow>      
     );
   }
