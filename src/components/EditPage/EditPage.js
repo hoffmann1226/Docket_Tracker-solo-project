@@ -12,7 +12,16 @@ import './EditPage.css';
 
 class EditPage extends Component {
 
-  
+componentDidUpdate(prevProps) {
+  if (this.props.details !== prevProps.details) {
+      this.setState({
+      case: this.props.details.case,
+      event: this.props.details.event,
+      due_date: this.props.details.due_date,
+      details: this.props.details.details,
+      })
+    }
+}
     state = {
         event: '',
         case: '',
@@ -31,6 +40,7 @@ handleChange = (event, input) => {
     console.log(this.state)
 }
 
+
 handleSave = () => {
     if (this.state.event === '' || this.state.case === '' || this.state.due_date === '' || this.state.details === '') {
         alert('Enter event, case, date, and details to save')
@@ -42,18 +52,19 @@ handleSave = () => {
 
   render() {
     return (
-      <div className="center"> Enter information to edit event
+      <div className="center"> Enter information to edit event 
+        <div>{JSON.stringify(this.props.details)}</div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'due_date')} placeholder="date"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'due_date')} value={this.state.due_date.split('T')[0]}></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'case')} value={this.state.case}></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'event')} value={this.state.event}></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'details')} placeholder="details"></Input>
+            <Input onChange={(event) => this.handleChange(event, 'details')} value={this.state.details}></Input>
           </div>
           <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel <CancelIcon/></Button>
           <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes <SaveAltIcon/></Button>

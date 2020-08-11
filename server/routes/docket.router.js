@@ -38,7 +38,7 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
       });
   });
 
-  //PUT Route for edit page
+  //PUT Route for edit page  //FIX THIS TO HAVE ID  AND FIX REC.BODY.ID to REC.PARAMS.ID
   router.put('/', rejectUnauthenticated, (req, res) => {
     let queryText = `UPDATE "event_info" SET "case" = $1, "event" = $2, "due_date" = $3, "details" = $4 WHERE "id" = $5;`;
     pool.query(queryText, [req.body.case, req.body.event, req.body.due_date, req.body.details, req.body.id])

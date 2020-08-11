@@ -20,7 +20,8 @@ this.props.dispatch({type: 'DELETE_EVENT', payload: id});
 }//end handleDelete
 
 goEdit = (id) => (event)=> {
-  console.log('edit clicked, id is', id) 
+  console.log('edit clicked, id is', id)
+  this.props.dispatch({type: 'GET_DETAILS', payload: id}) 
   this.props.history.push('/edit/' + id) 
 }
 
