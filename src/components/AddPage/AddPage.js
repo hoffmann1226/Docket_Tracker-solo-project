@@ -28,7 +28,7 @@ handleChange = (event, input) => {
 
 handleSave = () => {
     if (this.state.event === '' || this.state.case === '' || this.state.due_date === '' || this.state.details === '') {
-        alert('Enter event, case, date, and details to add')
+        alert('Enter date, case, event, and details to add')
     } else {
         this.props.dispatch({ type: 'ADD_EVENT', payload: this.state })
         this.goBack();
