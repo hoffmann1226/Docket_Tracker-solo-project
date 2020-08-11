@@ -36,6 +36,7 @@ class UserPage extends Component {
   render() {
     return (
     <div>
+      <h3>Hello, {this.props.user.username}! Here is what's on your docket:</h3>
       <DocketList/>
       <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
       <div className="center">
@@ -57,7 +58,8 @@ class UserPage extends Component {
 
 // Instead of taking everything from state, we just want the user info.
 const mapStateToProps = (state) => ({
-  search: state.search
+  search: state.search,
+  user: state.user
 });
 
 // this allows us to use <App /> in index.js
