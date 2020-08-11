@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
+
 
 
 class AddPage extends Component {
@@ -37,18 +37,19 @@ handleSave = () => {
 
   render() {
     return (
-      <div className="center"> Enter information to add an event to the docket
+      <div className="center"> 
+          <h2>Enter information to add to the docket:</h2>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></Input>  
+            <input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></Input>  
+            <input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
+            <input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></input>  
           </div>
           <div>
-          <Input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></Input>
+          <input onChange={(event) => this.handleChange(event, 'details')}placeholder="details"></input>
           </div>
           <Button color="secondary" variant="contained" onClick={this.goBack}>Back</Button>
           <Button color="primary" variant="contained" onClick={this.handleSave}>Confirm Add</Button>

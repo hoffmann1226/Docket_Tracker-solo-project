@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
 import CancelIcon from '@material-ui/icons/Cancel';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import './EditPage.css';
@@ -52,22 +51,22 @@ handleSave = () => {
 
   render() {
     return (
-      <div className="center"> Enter information to edit event 
-        <div>{JSON.stringify(this.props.details)}</div>
+      <div className="center"> 
+          <h2>Edit information to update event:</h2>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'due_date')} value={this.state.due_date.split('T')[0]}></Input>  
+            <input onChange={(event) => this.handleChange(event, 'due_date')} value={this.state.due_date.split('T')[0]}></input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'case')} value={this.state.case}></Input>  
+            <input onChange={(event) => this.handleChange(event, 'case')} value={this.state.case}></input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'event')} value={this.state.event}></Input>  
+            <input onChange={(event) => this.handleChange(event, 'event')} value={this.state.event}></input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'details')} value={this.state.details}></Input>
+            <input onChange={(event) => this.handleChange(event, 'details')} value={this.state.details}></input>
           </div>
           <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel <CancelIcon/></Button>
-          <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes <SaveAltIcon/></Button>
+          <Button color="primary" variant="contained" onClick={this.handleSave}>Save updates <SaveAltIcon/></Button>
       </div>
     );
   }
