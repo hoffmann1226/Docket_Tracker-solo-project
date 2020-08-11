@@ -37,7 +37,7 @@ handleSave = () => {
 
   render() {
     return (
-      <div> Enter information to add an event to the docket
+      <div className="center"> Enter information to add an event to the docket
           <div>
             <Input onChange={(event) => this.handleChange(event, 'due_date')}placeholder="date (YYYY-MM-DD)"></Input>  
           </div>
