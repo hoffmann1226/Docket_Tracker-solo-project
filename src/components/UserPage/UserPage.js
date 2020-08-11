@@ -8,6 +8,7 @@ import SearchItem from '../SearchItem/SearchItem'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import FaSearch from '@material-ui/icons/Search';
+import './UserPage.css';
 
 
 
@@ -37,7 +38,7 @@ class UserPage extends Component {
     <div>
       <DocketList/>
       <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
-      <div>
+      <div className="center">
         <p>Search docket by case: <Input onChange= {this.handleChange} placeholder="case name"></Input><Button color="default" variant="contained" onClick={this.searchCase}>Search <FaSearch/></Button></p>
       </div>
       <div>

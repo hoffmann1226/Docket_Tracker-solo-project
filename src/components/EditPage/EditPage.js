@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import Input from '@material-ui/core/Input';
 import CancelIcon from '@material-ui/icons/Cancel';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
+import './EditPage.css';
 
 
 
@@ -13,16 +14,12 @@ class EditPage extends Component {
 
   
     state = {
-        event: this.props.details.event,
-        case: this.props.details.case,
-        due_date: this.props.details.due_date,
-        details: this.props.details.details,
+        event: '',
+        case: '',
+        due_date: '',
+        details: '',
         id: this.props.match.params.id 
     }
-
-componentDidMount () {
-  this.props.dispatch({type: 'GET_DETAILS', payload: this.props.match.params.id}) 
-}
 
 goBack =() => this.props.history.push('/home');
 
@@ -45,18 +42,18 @@ handleSave = () => {
 
   render() {
     return (
-      <div> Enter information to edit an event to the docket
+      <div className="center"> Enter information to edit event
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'due_date')} value={this.state.due_date}></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'due_date')} placeholder="date"></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'case')} value={this.state.case}></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'case')} placeholder="case"></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'event')} value={this.state.event}></Input>  
+            <Input onChange={(event) => this.handleChange(event, 'event')} placeholder="event"></Input>  
           </div>
           <div>
-            <Input onChange={(event) => this.handleChange(event, 'details')}value={this.state.details}></Input>
+            <Input onChange={(event) => this.handleChange(event, 'details')} placeholder="details"></Input>
           </div>
           <Button color="secondary" variant="contained"onClick={this.goBack}>Cancel <CancelIcon/></Button>
           <Button color="primary" variant="contained" onClick={this.handleSave}>Save changes <SaveAltIcon/></Button>

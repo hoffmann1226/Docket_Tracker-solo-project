@@ -11,9 +11,8 @@ goBack =() => this.props.history.push('/home');
 
   render() {
     return (
-        <div >
+        <div className="center">
             <h3> Event: {this.props.details.event}</h3>
-            {/* <h3> Date: {this.props.details.due_date.split('T')[0]}</h3> */}
             <h3> Case: {this.props.details.case}</h3>
             <h3>Details: {this.props.details.details}</h3>
             <Button color="default" variant="contained" onClick={this.goBack}>Back</Button>
