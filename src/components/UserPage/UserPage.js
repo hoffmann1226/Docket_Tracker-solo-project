@@ -36,7 +36,7 @@ class UserPage extends Component {
   render() {
     return (
     <div>
-      <h3>Hello, {this.props.user.username}! Here is what's on your docket:</h3>
+      <h3>Hello, {this.props.user.username}! Here's what's on your docket:</h3>
       <DocketList/>
       <Button color="default" variant="contained" onClick={this.addEvent}>Add Event <AddIcon/></Button>
       <div className="center">
